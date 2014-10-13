@@ -61,80 +61,88 @@
                 <p>« Un gestionnaire de version est un système qui enregistre l'évolution d'un fichier ou d'un ensemble de fichiers au cours du temps de manière à ce que l'on puisse rappeler une version antérieure d'un fichier à tout moment. »</p>
                 </section>
                 <section>
+                <section><h2>3 types de système</h2></section>
                     <section>
-                        <img src="images/tour1.jpg" style="height: 600px;">
+                        <h2>Les systèmes locaux</h2>
+                        <img src="images/local_system.png" />
+                        <p>Exemples : RCS, copies locales, …</p>
                     </section>
                     <section>
-                        <img src="images/tour2.jpg" style="height: 600px;">
+                        <h2>Les systèmes centralisés (CVCS)</h2>
+                        <img src="images/centralized_system.png" />
+                        <p>Exemples : CVS, SVN, Perforce, …</p>
                     </section>
                     <section>
-                        <img src="images/tour3.jpg" style="height: 600px;">
+                        <h2>Les systèmes distribués (DVCS)</h2>
+                        <img src="images/distributed_system.png" />
                     </section>
                     <section>
-                        <img src="images/tour4.jpg" style="height: 600px;">
-                    </section>
-                    <section>
-                        <img src="images/tour5.jpg" style="height: 600px;">
-                    </section>
-                    <section>
-                        <img src="images/tour6.jpg" style="height: 600px;">
+                        <p>Exemples : Git, Mercurial, Bazaar, Darcs, …</p>
                     </section>
                 </section>
                 <section>
-                    <h2>Vos retours ?</h2>
-                </section>
-                <section>
                     <section>
-                        <h2>Questions à se poser</h2>
-                    </section>
-                    <section>
+                        <h2>Historique</h2>
                         <ul>
-                            <li>Comment la tour a-t-elle été conçue ?</li>
-                            <li>Est-ce que tout le monde a participé au choix de la solution ? Comment ?</li>
-                            <li>Le mode opératoire est-il compréhensible par une personne tierce ?</li>
-                            <li>Y a-t-il des dessins ? Est-ce que les rôles sont définis ?</li>
+                            <li>Création en 2005</li>
+                            <li>Noyau Linux</li>
+                            <li>Développeur : Linus Torvald</li>
                         </ul>
                     </section>
 
                     <section>
+                        <h2>Objectifs</h2>
                         <ul>
-                            <li>Le temps de conception était-il suffisant ?</li>
-                            <li>Quel type d'approche a été finalement réalisée ?</li>
-                            <li>Quel a été l'apport du temps limité ?</li>
-                            <li>Quelle a été la répartition des rôles ?</li>
+                            <li>vitesse</li>
+                            <li>conception simple</li>
+                            <li>support pour les développements non linéaires (milliers de branches parallèles)</li>
+                            <li>complètement distribué</li>
+                            <li>capacité à gérer efficacement des projets d'envergure tels que le noyau Linux (vitesse et compacité des données)</li>
                         </ul>
                     </section>
+                </section>
+                <section>
+                    <h1>Les bases</h1>
+                </section>
+                <section>
                     <section>
-                        <p>On avance, on teste, on ré-ajuste, on avance de nouveau, etc.</p>
+                        <p>Git gère des instantanés et non des différences.</p>
                     </section>
                     <section>
-                        <h2>À refaire ?</h2>
+                            <h2>Historiquement</h2>
+                            <img src="images/vcs_diff.png" />
                     </section>
-
+                    <section>
+                            <h2>Git</h2>
+                            <img src="images/vcs_snap.png" />
+                    </section>
                 </section>
                 <section>
-                    <h2>Conduite de projet</h2>
-                    <h2 class="fragment">...</h2>
-                    <h2 class="fragment">Conduite de <em>vos projets</em><h2>
+                    <section>
+                        <p>La majorité des opération est locale</p>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>Pas le latence réseau</li>
+                            <li>Accès immédiats et rapides</li>
+                            <li>Possibilité de travailler déconnecté</li>
+                        </ul>
+                    </section>
                 </section>
-
                 <section>
-                    <ul>
-                        <li>Premier <em>vrai</em> <strong>travail de groupe</strong></li>
-                        <li>Premier vrai <strong>travail seul</strong>, pour un groupe</li>
-                    </ul>
-
+                    <section>
+                    <p>Git gère l'intégrité</p>
+                    </section>
+                    <section>
+                        <p>Git calcule des sommes de contrôle (SHA-1)</p>
+                        <pre><code data-trim>24b9da6552252987aa493b52f8696cd6d3b00373</pre></code>
+                        <p>Vous les verrez partout !</p>
+                    </section>
                 </section>
-
                 <section>
-                    <h2>Quelques conseils</h2>
-                    <ul>
-                        <li>Mettez en commun, tout, tout le temps, tout de suite : <strong>Git</strong></li>
-                        <li>Faites attention au mythe du mois homme</li>
-                        <li>Apprenez à vous auto-gérer : Pomodoro, GTD, …</li>
-                    </ul>
+                    <p>Généralement, Git ne fait qu'ajouter</p>
+                <section>
 
-                </section>
 			</div>
 
 		</div>
