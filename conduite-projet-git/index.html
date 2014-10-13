@@ -336,6 +336,23 @@ Changes to be committed:
                     </section>
                 </section>
                 <section>
+                    <h2>Ignorer des fichiers</h2>
+                    <p>Créer un fichier .gitignore</p>
+                        <pre><code data-trim class="bash">
+$ cat .gitignore
+*.[oa]
+*~
+# ignorer uniquement le fichier TODO à la racine du projet
+/TODO
+# ignorer tous les fichiers dans le répertoire build
+build/
+# ignorer doc/notes.txt, mais pas doc/server/arch.txt
+doc/*.txt
+# ignorer tous les fichiers .txt sous le répertoire doc/
+doc/**/*.txt
+                        </pre></code>
+                </section>
+                <section>
                     <section>
                         <h2>Valider vos modifications</h2>
                         <pre><code data-trim class="bash">
@@ -362,6 +379,42 @@ $ git commit -m "Story 182: Fix benchmarks for speed"
 [master]: created 463dc4f: "Fix benchmarks for speed"
  2 files changed, 3 insertions(+), 0 deletions(-)
  create mode 100644 LISEZMOI
+                        </pre></code>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                    <h2>Supprimer des fichiers</h2>
+                    <pre><code data-trim class="bash">
+$ rm grit.gemspec
+$ git status
+# On branch master
+#
+# Changes not staged for commit:
+#   (use "git add/rm &laquo;file&raquo;..." to update what will be committed)
+#
+#       deleted:    grit.gemspec
+#
+                        </pre></code>
+                    </section>
+                    <section>
+                    <pre><code data-trim class="bash">
+$ git rm grit.gemspec
+rm 'grit.gemspec'
+$ git status
+# On branch master
+#
+# Changes to be committed:
+#   (use "git reset HEAD &laquo;file&raquo;..." to unstage)
+#
+#       deleted:    grit.gemspec
+#
+                        </pre></code>
+                    </section>
+                    <section>
+                        <h2>Arrêter de suivre un fichier</h2>
+                    <pre><code data-trim class="bash">
+$ git rm --cached readme.txt
                         </pre></code>
                     </section>
                 </section>
