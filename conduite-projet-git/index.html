@@ -699,6 +699,114 @@ $ git commit -a -m 'autres modifications'
                             <img src="images/branch_head_testing_4_diverged.png" />
                     </section>
                 </section>
+                <section>
+                    <section>
+                        <h2>Brancher et fusionner</h2>
+                    </section>
+                    <section>
+                        <h3>Dépôt git de base</h3>
+                        <img src="images/branch_merge_1.png" />
+                        <p>Créons une nouvelle branche <strong>iss53</strong></p>
+                    </section>
+                    <section>
+                        <p>Création de la branche <strong>iss53</strong></p>
+                        <pre><code data-trim class="bash">
+$ git checkout -b iss53
+Switched to a new branch "iss53"
+                        </pre></code>
+                        <p>Raccourci pour</p>
+                        <pre><code data-trim class="bash">
+$ git branch iss53
+$ git checkout iss53
+                        </pre></code>
+                        <img src="images/branch_merge_2.png" />
+                    </section>
+                    <section>
+                        <p>Faisons quelques modifications dans <strong>iss53</strong></p>
+                        <pre><code data-trim class="bash">
+$ vim index.html
+$ git commit -a -m 'ajout d'un pied de page [issue 53]'
+                        </pre></code>
+                        <img src="images/branch_merge_3.png" />
+                    </section>
+                    <section>
+                        <p>Un client appelle, il faut faire un correctif urgent …</p>
+                        <p>mais vous n'êtes pas prêts à publier <strong>iss53</strong> !</p>
+                    </section>
+                    <section>
+                        <p>Pas de problème, revenons sur <strong>master</strong></p>
+                        <pre><code data-trim class="bash">
+$ git checkout master
+Switched to branch "master"
+                        </pre></code>
+                        <p>et créons une nouvelle branche pour ce correctif (hotfix)</p>
+                        <pre><code data-trim class="bash">
+$ git checkout -b 'hotfix'
+Switched to a new branch "hotfix"
+$ vim index.html
+$ git commit -a -m "correction d'une adresse mail incorrecte"
+[hotfix]: created 3a0874c: "correction d'une adresse mail incorrecte"
+ 1 files changed, 0 insertions(+), 1 deletions(-)
+                        </pre></code>
+                    </section>
+                    <section>
+                        <p>Ce qui nous donne</p>
+                        <img src="images/branch_merge_4.png" />
+                    </section>
+                    <section>
+                        <p>Le correctif est ok, fusionnons le dans <strong>master</strong></p>
+                        <pre><code data-trim class="bash">
+$ git checkout master
+$ git merge hotfix
+Updating f42c576..3a0874c
+Fast forward
+ LISEZMOI |    1 -
+  1 files changed, 0 insertions(+), 1 deletions(-)
+                        </pre></code>
+                        <img src="images/branch_merge_5.png" />
+                    </section>
+                    <section>
+                        <p>Et faisons un peu de ménage en supprimant la branche <strong>hotfix</strong></p>
+                        <pre><code data-trim class="bash">
+$ git branch -d hotfix
+Deleted branch hotfix (3a0874c).
+                        </pre></code>
+                    </section>
+                    <section>
+                        <p>Retournons à nos moutons sur <strong>iss53</strong></p>
+                        <pre><code data-trim class="bash">
+$ git checkout iss53
+Switched to branch "iss53"
+$ vim index.html
+$ git commit -a -m 'Nouveau pied de page terminé [issue 53]'
+[iss53]: created ad82d7a: "Nouveau pied de page terminé [issue 53]"
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+                        </pre></code>
+                        <img src="images/branch_merge_6.png" />
+                    </section>
+                    <section>
+                        <h2>Les bases de la fusion</h2>
+                        <p>Fusionnons <strong>iss53</strong> dans <strong>master</strong></p>
+                        <pre><code data-trim class="bash">
+$ git checkout master
+$ git merge iss53
+Merge made by recursive.
+ README |    1 +
+  1 files changed, 1 insertions(+), 0 deletions(-)
+                        </pre></code>
+                    </section>
+                    <section>
+                        <img src="images/branch_merge_7.png" />
+                    </section>
+                    <section>
+                        <p>Et voilà le résultat</p>
+                        <img src="images/branch_merge_8.png" />
+                        <p>Un peu de ménage</p>
+                        <pre><code data-trim class="bash">
+$ git branch -d iss53
+                        </pre></code>
+                    </section>
+                </section>
             </div>
 
 		</div>
