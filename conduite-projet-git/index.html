@@ -420,6 +420,55 @@ $ git rm --cached readme.txt
                 </section>
                 <section>
                     <section>
+                        <h2>Visualiser les différences</h2>
+                        <p>Visualiser les modifications non indexées</p>
+                        <pre><code data-trim class="bash">
+$ git diff
+                        </pre></code>
+                    </section>
+                    <section>
+                        <pre><code data-trim class="bash">
+$ git diff
+diff --git a/benchmarks.rb b/benchmarks.rb
+index e445e28..86b2f7c 100644
+--- a/benchmarks.rb
++++ b/benchmarks.rb
+@@ -127,3 +127,4 @@ end
+ main()
+
+ ##pp Grit::GitRuby.cache_client.stats
++# test line
+                        </pre></code>
+                    </section>
+                    <section>
+                        <p>Visualiser les différences entre les fichiers indexés et le dernier instantané</p>
+                        <pre><code data-trim class="bash">
+$ git diff --cached
+                        </pre></code>
+                    </section>
+                    <section>
+                        <pre><code data-trim class="bash">
+$ git diff --cached
+diff --git a/benchmarks.rb b/benchmarks.rb
+index 3cb747f..e445e28 100644
+--- a/benchmarks.rb
++++ b/benchmarks.rb
+@@ -36,6 +36,10 @@ def main
+          @commit.parents[0].parents[0].parents[0]
+        end
+
++        run_code(x, 'commits 1') do
++          git.commits.size
++        end
++
+        run_code(x, 'commits 2') do
+          log = git.commits('master', 15)
+          log.size
+                        </pre></code>
+                    </section>
+                </section>
+                <section>
+                    <section>
                         <h2>Visualiser l'historique</h2>
                         <p>Dépôt d'exemple :</p>
                         <pre><code data-trim class="bash">
@@ -447,6 +496,60 @@ Date:   Sat Mar 15 10:31:28 2008 -0700
 
     first commit
                     </pre></code>
+                    </section>
+                    <section>
+                    <pre><code data-trim class="bash">
+$ git log -p -2
+commit ca82a6dff817ec66f44342007202690a93763949
+Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Mon Mar 17 21:52:11 2008 -0700
+
+    changed the version number
+
+diff --git a/Rakefile b/Rakefile
+index a874b73..8f94139 100644
+--- a/Rakefile
++++ b/Rakefile
+@@ -5,5 +5,5 @@ require 'rake/gempackagetask'
+ spec = Gem::Specification.new do |s|
+     s.name      =   "simplegit"
+-    s.version   =   "0.1.0"
++    s.version   =   "0.1.1"
+     s.author    =   "Scott Chacon"
+     s.email     =   "schacon@gee-mail.com
+
+commit 085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7
+Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Sat Mar 15 16:40:33 2008 -0700
+
+    removed unnecessary test code
+
+diff --git a/lib/simplegit.rb b/lib/simplegit.rb
+index a0a60ae..47c6340 100644
+--- a/lib/simplegit.rb
++++ b/lib/simplegit.rb
+@@ -18,8 +18,3 @@ class SimpleGit
+     end
+
+ end
+-
+-if $0 == __FILE__
+-  git = SimpleGit.new
+-  puts git.show
+-end
+\ No newline at end of file
+                    </pre></code>
+                    </section>
+                    <section>
+                        <pre><code data-trim class="bash">
+    $ git log --since=2.weeks
+                        </pre></code>
+                    </section>
+                    <section>
+                        <pre><code data-trim class="bash">
+    $ gitk
+                        </pre></code>
+                        <img src="images/gitk.png" />
                     </section>
                 </section>
             </div>
