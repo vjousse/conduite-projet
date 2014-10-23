@@ -249,7 +249,7 @@ $ vim LISEZMOI
 $ git status
 On branch master
 Untracked files:
-  (use "git add &laquo;file&raquo;..." to include in what will be committed)
+  (use "git add &lt;file&gt;..." to include in what will be committed)
 
         LISEZMOI
 
@@ -268,7 +268,7 @@ $ git add LISEZMOI
 $ git status
 On branch master
 Changes to be committed:
-  (use "git reset HEAD &laquo;file&raquo;..." to unstage)
+  (use "git reset HEAD &lt;file&gt;..." to unstage)
 
         new file:   LISEZMOI
                     </pre></code>
@@ -280,13 +280,13 @@ Changes to be committed:
 $ git status
 On branch master
 Changes to be committed:
-(use "git reset HEAD &laquo;file&raquo;..." to unstage)
+(use "git reset HEAD &lt;file&gt;..." to unstage)
 
         new file:   LISEZMOI
 
 Changes not staged for commit:
-(use "git add &laquo;file&raquo;..." to update what will be committed)
-(use "git checkout -- &laquo;file&raquo;..." to discard changes in working directory)
+(use "git add &lt;file&gt;..." to update what will be committed)
+(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
         modified:   benchmarks.rb
                         </pre></code>
@@ -297,7 +297,7 @@ $ git add benchmarks.rb
 $ git status
 On branch master
 Changes to be committed:
-(use "git reset HEAD &laquo;file&raquo;..." to unstage)
+(use "git reset HEAD &lt;file&gt;..." to unstage)
 
         new file:   LISEZMOI
         modified:   benchmarks.rb
@@ -309,14 +309,14 @@ $ vim benchmarks.rb
 $ git status
 On branch master
 Changes to be committed:
-  (use "git reset HEAD &laquo;file&raquo;..." to unstage)
+  (use "git reset HEAD &lt;file&gt;..." to unstage)
 
         new file:   LISEZMOI
         modified:   benchmarks.rb
 
 Changes not staged for commit:
-  (use "git add &laquo;file&raquo;..." to update what will be committed)
-  (use "git checkout -- &laquo;file&raquo;..." to discard changes in working directory)
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
         modified:   benchmarks.rb
                         </pre></code>
@@ -328,7 +328,7 @@ $ git add benchmarks.rb
 $ git status
 On branch master
 Changes to be committed:
-  (use "git reset HEAD &laquo;file&raquo;..." to unstage)
+  (use "git reset HEAD &lt;file&gt;..." to unstage)
 
         new file:   LISEZMOI
         modified:   benchmarks.rb
@@ -363,7 +363,7 @@ doc/**/*.txt
 # with '#' will be ignored, and an empty message aborts the commit.
 # On branch master
 # Changes to be committed:
-#   (use "git reset HEAD &laquo;file&raquo;..." to unstage)
+#   (use "git reset HEAD &lt;file&gt;..." to unstage)
 #
 #       new file:   LISEZMOI
 #       modified:   benchmarks.rb
@@ -391,7 +391,7 @@ $ git status
 # On branch master
 #
 # Changes not staged for commit:
-#   (use "git add/rm &laquo;file&raquo;..." to update what will be committed)
+#   (use "git add/rm &lt;file&gt;..." to update what will be committed)
 #
 #       deleted:    grit.gemspec
 #
@@ -405,7 +405,7 @@ $ git status
 # On branch master
 #
 # Changes to be committed:
-#   (use "git reset HEAD &laquo;file&raquo;..." to unstage)
+#   (use "git reset HEAD &lt;file&gt;..." to unstage)
 #
 #       deleted:    grit.gemspec
 #
@@ -416,6 +416,37 @@ $ git status
                     <pre><code data-trim class="bash">
 $ git rm --cached readme.txt
                         </pre></code>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Visualiser l'historique</h2>
+                        <p>Dépôt d'exemple :</p>
+                        <pre><code data-trim class="bash">
+$ git clone git://github.com/schacon/simplegit-progit.git
+                        </pre></code>
+                    </section>
+                    <section>
+                    <pre><code data-trim class="bash">
+$ git log
+commit ca82a6dff817ec66f44342007202690a93763949
+Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Mon Mar 17 21:52:11 2008 -0700
+
+    changed the version number
+
+commit 085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7
+Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Sat Mar 15 16:40:33 2008 -0700
+
+    removed unnecessary test code
+
+commit a11bef06a3f659402fe7563abf99ad00de2209e6
+Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Sat Mar 15 10:31:28 2008 -0700
+
+    first commit
+                    </pre></code>
                     </section>
                 </section>
             </div>
