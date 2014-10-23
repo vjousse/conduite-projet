@@ -545,17 +545,110 @@ index a0a60ae..47c6340 100644
     $ git log --since=2.weeks
                         </pre></code>
                     </section>
+                </section>
+                <section>
                     <section>
+                        <h2>Interfaces graphiques</h2>
+
                         <pre><code data-trim class="bash">
-    $ gitk
+$ gitk
                         </pre></code>
                         <img src="images/gitk.png" />
                     </section>
+                    <section>
+                        <p><a href="http://www.git-scm.com/downloads/guis">http://www.git-scm.com/downloads/guis</a>
+                        <img src="images/sourcetree.png" />
+                    </section>
                 </section>
                 <section>
-                    <h2>Interfaces graphiques</h2>
-                    <p><a href="http://www.git-scm.com/downloads/guis">http://www.git-scm.com/downloads/guis</a>
-                    <img src="images/sourcetree.png" />
+                    <section>
+                        <h2>Travailler avec des dépôts distants</h2>
+                    </section>
+                    <section>
+                        <pre><code data-trim class="bash">
+$ git clone git://github.com/schacon/ticgit.git
+Initialized empty Git repository in /private/tmp/ticgit/.git/
+remote: Counting objects: 595, done.
+remote: Compressing objects: 100% (269/269), done.
+remote: Total 595 (delta 255), reused 589 (delta 253)
+Receiving objects: 100% (595/595), 73.31 KiB | 1 KiB/s, done.
+Resolving deltas: 100% (255/255), done.
+$ cd ticgit
+$ git remote
+origin
+                        </pre></code>
+                    </section>
+                    <section>
+                        <pre><code data-trim class="bash">
+$ git remote -v
+origin  git://github.com/schacon/ticgit.git (fetch)
+origin  git://github.com/schacon/ticgit.git (push)
+                        </pre></code>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Ajouter des dépôts</h2>
+                    </section>
+                    <section>
+                        <pre><code data-trim class="bash">
+$ git remote
+origin
+$ git remote add pb git://github.com/paulboone/ticgit.git
+$ git remote -v
+origin  git://github.com/schacon/ticgit.git
+pb  git://github.com/paulboone/ticgit.git
+                        </pre></code>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Récupérer depuis des dépôts distants</h2>
+                    </section>
+                    <section>
+                        <p>Récupération de code distant dans une nouvelle branche</p>
+                        <pre><code data-trim class="bash">
+$ git fetch pb
+remote: Counting objects: 58, done.
+remote: Compressing objects: 100% (41/41), done.
+remote: Total 44 (delta 24), reused 1 (delta 0)
+Unpacking objects: 100% (44/44), done.
+From git://github.com/paulboone/ticgit
+ * [new branch]      master     -> pb/master
+ * [new branch]      ticgit     -> pb/ticgit
+                        </pre></code>
+                    </section>
+                    <section>
+                        <p>Récupération de code distant et fusion dans la branche courante</p>
+                        <p>À partir du remote <strong>pb</strong></p>
+                        <pre><code data-trim class="bash">
+$ git pull pb
+                        </pre></code>
+                        <p>À partir du remote par défaut (<strong>origin</strong>)</p>
+                        <pre><code data-trim class="bash">
+$ git pull
+                        </pre></code>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Pousser son travail sur un dépôt distant</h2>
+                        <p>git push <em>[nom-distant]</em> <em>[nom-de-branche]</em></p>
+                        <pre><code data-trim class="bash">
+$ git push origin master
+                        </pre></code>
+                    </section>
+                </section>
+                <section>
+                    <h1>Les branches avec Git</h1>
+                </section>
+                <section>
+                    <section>
+                        <p>« Créer une branche signifie <strong>diverger</strong> de la ligne principale de développement et <strong>continuer à travailler sans se préoccuper</strong> de cette ligne principale. »</p>
+                    </section>
+                    <section>
+                        <p>C'est <strong>LA</strong> fonctionnalité de Git</p>
+                    </section>
                 </section>
             </div>
 
