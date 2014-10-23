@@ -650,6 +650,55 @@ $ git push origin master
                         <p>C'est <strong>LA</strong> fonctionnalité de Git</p>
                     </section>
                 </section>
+                <section>
+                    <p>La branche par défaut de Git s'appelle <strong>master</strong></p>
+                    <img src="images/branch_master.png" />
+                </section>
+                <section>
+                    <section>
+                        <h2>Création d'une nouvelle branche</h2>
+                            <pre><code data-trim class="bash">
+$ git branch testing
+                            </pre></code>
+                            <img src="images/branch_master_testing.png" />
+                    </section>
+                    <section>
+                        <p>Le pointeur spécial <strong>HEAD</strong> vers la branche courante</p>
+                        <img src="images/branch_head.png" />
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Changer de branche</h2>
+                            <pre><code data-trim class="bash">
+$ git checkout testing
+                            </pre></code>
+                            <img src="images/branch_head_testing.png" />
+                    </section>
+                    <section>
+                        <p>Qu'est-ce qu'il se passe si nous modifions un fichier ?</p>
+                        <pre><code data-trim class="bash">
+$ vim test.rb
+$ git commit -a -m 'petite modification'
+                        </pre></code>
+                            <img src="images/branch_head_testing_2.png" />
+                    </section>
+                    <section>
+                        <p>Retournons sur <strong>master</strong></p>
+                        <pre><code data-trim class="bash">
+$ git checkout master
+                        </pre></code>
+                        <img src="images/branch_head_testing_3.png" />
+                    </section>
+                    <section>
+                        <p>Et si nous modifions de nouveau ?</p>
+                        <pre><code data-trim class="bash">
+$ vim test.rb
+$ git commit -a -m 'autres modifications'
+                        </pre></code>
+                            <img src="images/branch_head_testing_4_diverged.png" />
+                    </section>
+                </section>
             </div>
 
 		</div>
